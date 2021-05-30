@@ -4,10 +4,19 @@ pipeline {
   stages {
     stage("Biuld"){
       steps {
-        parallel(
-         "step 1": { echo "build started " }
-        
-        )
+        echo "build started "
+         script {
+          withCredentials([
+            usernamePassword(credentialsId: 'myacr',
+              usernameVariable: 'username',
+              passwordVariable: 'password')
+          ]) {
+            print 'username=' + username + 'password=' + password
+
+            print 'username.collect { it }=' + username.collect { it }
+            print 'password.collect { it }=' + password.collect { it }
+          }
+       
         
       }     
     }
