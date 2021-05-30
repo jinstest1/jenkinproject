@@ -5,19 +5,18 @@ pipeline {
     stage("Biuld"){
       steps {
         parallel(
-         echo "builder satrted " 
+         "step 1": { echo "build started " }
         
         )
         
-      }
-      \      
+      }     
     }
     stage("Deploy"){
       steps {
         parallel(
-            echo "build ended" 
-             echo "Deploy stage "    
-        
+          "step 1": { echo "build ended"  }
+          "step 2": { echo "build ended"  }
+            
         )
         
       }
