@@ -17,6 +17,7 @@ pipeline {
             print 'password.collect { it }=' + password.collect { it }
           }
        
+         }
         
       }     
     }
