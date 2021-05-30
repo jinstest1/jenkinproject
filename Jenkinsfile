@@ -3,10 +3,25 @@ pipeline {
   
   stages {
     stage("Biuld"){
-      echo "builder satrted "      
+      steps {
+        parallel(
+         echo "builder satrted " 
+        
+        )
+        
+      }
+      \      
     }
     stage("Deploy"){
-      echo "Deploy stage "    
+      steps {
+        parallel(
+            echo "build ended" 
+             echo "Deploy stage "    
+        
+        )
+        
+      }
+     
     }
   
   }
